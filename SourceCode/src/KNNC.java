@@ -32,9 +32,6 @@ public class KNNC {
 		calculateMeanNStd();
 		normalizeTrainingData();
 		normalizeTestData();
-		// printNormalizedTrainingData();
-		// printNormalizedTestData();
-		// printResults();
 		classifyTestData();
 
 	}
@@ -56,10 +53,6 @@ public class KNNC {
 			double accuracy = 0.0;
 
 			if (isTie) {
-				// if (isClassificationSuccessful) {
-				// accuracy = 1 / tiedClassList.size();
-				// }
-				
 				if (tiedClassList.contains(test_class)) {
 					// If there were ties in your classification result, and the
 					// correct class was one of the classes that tied for best,
@@ -105,7 +98,6 @@ public class KNNC {
 				if (!tiedClassList.contains(knnclassify.training_class[training_object_no])) {
 					tiedClassList.add(knnclassify.training_class[training_object_no]);
 				}
-				//System.out.println("Tied for testObject : " + test_object_no + ", Tied for distance : " + curr_euclidean_distance + ", tied class : " + knnclassify.training_class[training_object_no] + ", tied Size : " + tiedClassList.size());
 			}
 		}
 
@@ -156,8 +148,7 @@ public class KNNC {
 		}
 	}
 
-	// ********************************** TRAINING DATA
-	// ************************************
+	// ********************************** TRAINING DATA ************************************
 
 	private void normalizeTrainingData() {
 		for (int attr_no = 0; attr_no < knnclassify.ATTRIBUTES_COUNT; attr_no++) {
@@ -203,8 +194,7 @@ public class KNNC {
 		}
 	}
 
-	// ********************************** TEST DATA
-	// ************************************
+	// ********************************** TEST DATA ************************************
 
 	private void normalizeTestData() {
 		for (int attr_no = 0; attr_no < knnclassify.ATTRIBUTES_COUNT; attr_no++) {
