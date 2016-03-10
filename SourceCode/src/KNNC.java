@@ -47,8 +47,6 @@ public class KNNC {
 
 			int training_class = knnclassify.training_class[nearest_training_object];
 			int test_class = knnclassify.test_class[test_object_no];
-			// boolean isClassificationSuccessful = (training_class ==
-			// test_class);
 			boolean isTie = tiedClassList.size() > 1;
 			double accuracy = 0.0;
 
